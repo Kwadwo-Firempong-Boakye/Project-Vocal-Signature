@@ -1,0 +1,116 @@
+:root {
+    --dark: #1e1e1e;
+    --green: #1ed760;
+    --yellow: #ffe100;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    background: #252526;
+    color: whitesmoke;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #1e1e1e, #333333, #252526 );
+    padding: 0 2rem;
+}
+
+.logo-group {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    left: -1rem;
+    top: 0.25rem;
+}
+
+.pageName {
+    position: relative;
+    left: -1rem;
+    font-size: 1.5rem;
+}
+
+.navLink {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    left: 0;
+}
+
+.navLink a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.navLink a:hover {
+    color: var(--green);
+    /*font-size: 1.35rem;*/
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 2em;
+    height: 2px;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--yellow);
+}
+
+@media only screen and (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navLink {
+        position: fixed;
+        top: -100%;
+        flex-direction: column;
+        gap: 0;
+        background: linear-gradient(200deg, #333333, #1e1e1e);
+        width: 100%;
+        text-align: center;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .navLink a {
+        padding: 1rem 0;
+        margin: 0;
+        border-bottom: 2px dashed #333333;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .navLink.active {
+        top: 50px;
+        left: 0;
+    }
+}
