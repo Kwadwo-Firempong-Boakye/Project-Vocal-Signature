@@ -55,7 +55,7 @@ let audioKeys = document.querySelectorAll("audio[data-key]");
 
 divKeys.forEach ((item) => {
     item.addEventListener("click" , clickPlay);
-    
+    item.addEventListener("touchstart", clickPlay);
 })
 
 function clickPlay () {
