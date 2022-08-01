@@ -17,10 +17,36 @@ document.querySelectorAll(".navLink.a").forEach((item) => {
     addEventListener("click", hideHamburger)
 })
 
-document.querySelector(".img-container").addEventListener("click", (e) => {
-    console.log(e);
-})
 
-window.addEventListener("keydown", (e) => {
-    console.log(e.keyCode);
-})
+//Function to match audio with key
+function audioMatch (e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"`)
+    if (!audio) {
+        return;
+    } else {
+    audio.currentTime = 0;
+    audio.play();
+    }
+
+    const key = document.querySelector(`.img-container[data-key="${e.keyCode}"]`)
+    const keyImage = key.children[0];
+    keyImage.classList.add("playing");
+}
+
+//Function to remove transition
+function removeTransition (e) {
+    if (e.propertyName !== "border-top-width") {
+        return;
+    } else {
+        this.classList.remove("playing");
+    }
+}
+
+
+const everyKey = document.querySelectorAll(".images");
+everyKey.forEach((item) => item.addEventListener("transitionend", removeTransition));
+
+window.addEventListener("keydown", audioMatch)
+
+
+

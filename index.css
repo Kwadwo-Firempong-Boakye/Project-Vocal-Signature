@@ -180,19 +180,19 @@ nav {
 }
 
 .img-container:hover{
-    color: #1ed760
+    color: #a0fcc2
 }
 
 .images{
     border-radius: 50%;
     border: 8px solid var(--green);
     max-width: 320px;
-    transition: all 0.2s;
+    transition: all 0.5s;
 }
-
+/*s
 .images:hover{
-    border: 16px solid #1ed760;
-}
+    border: 8px solid #a0fcc2;
+}*/
 
  .caption{
     font-size: 1.5rem;
@@ -219,4 +219,11 @@ nav {
  .emphasize{
     color: #ffe100;
     font-weight: 600;
+ }
+
+ .playing{
+    background: linear-gradient(#000, #000) padding-box,
+    linear-gradient(35deg, hsla(142, 94%, 81%, 1) 23%, hsla(240, 1%, 15%, 1) 31%, hsla(240, 1%, 15%, 1) 70%, hsla(142, 94%, 81%, 1) 76%) border-box;
+    border: 20px solid transparent;
+    
  }
