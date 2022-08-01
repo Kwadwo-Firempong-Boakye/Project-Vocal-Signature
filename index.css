@@ -18,7 +18,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(90deg, #1e1e1e, #333333, #252526 );
-    padding: 0 2rem;
+    padding: 1rem 2rem;
 }
 
 .logo-group {
@@ -30,20 +30,22 @@ nav {
 .logo {
     position: relative;
     left: -1rem;
-    top: 0.25rem;
+    top: 0.1rem;
 }
 
 .pageName {
     position: relative;
     left: -1rem;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
 }
 
 .navLink {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     transition: all 0.3s ease-in-out;
     left: 0;
 }
@@ -57,7 +59,6 @@ nav {
 
 .navLink a:hover {
     color: var(--green);
-    /*font-size: 1.35rem;*/
 }
 
 .hamburger {
@@ -93,24 +94,124 @@ nav {
 
     .navLink {
         position: fixed;
-        top: -100%;
+        top: -50%;
         flex-direction: column;
         gap: 0;
         background: linear-gradient(200deg, #333333, #1e1e1e);
         width: 100%;
         text-align: center;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
 
     .navLink a {
         padding: 1rem 0;
         margin: 0;
         border-bottom: 2px dashed #333333;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
 
     .navLink.active {
-        top: 50px;
+        top: 82px;
         left: 0;
+        opacity: 0.98;
+    }
+
+    .main{
+        gap: 1rem;
+    }
+
+    .images{
+        width: 300px;
+    }
+
+    .button{
+        display: none;
     }
 }
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.heading {
+    text-transform: uppercase;
+    padding: 0 1rem;
+    margin-top: 72px;
+    margin-bottom: 0;
+    max-width: 90vw;
+    font-size: 4.5rem;
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
+    line-height: 120%;
+    color: var(--green);
+}
+
+.highlight {
+    color: var(--yellow);
+}
+
+.sub-heading {
+    margin: 0;
+    max-width: 80vw;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 3rem 4rem;
+}
+
+.img-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px
+}
+
+.img-container:hover{
+    color: #1ed760
+}
+
+.images{
+    border-radius: 50%;
+    border: 8px solid var(--green);
+    max-width: 320px;
+    transition: all 0.3s;
+}
+
+.images:hover{
+    border: 16px solid #1ed760;
+}
+
+ .caption{
+    font-size: 1.5rem;
+    text-align: center;
+ }
+
+ .button {
+    width: 200px;
+    padding: 0.75rem;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #616161;
+    color: white;
+ }
+
+ .letter-key{
+    color: #1ed760;
+    font-weight: 600;
+    font-size: 1.3em;
+    padding: 0 5px;
+ }
