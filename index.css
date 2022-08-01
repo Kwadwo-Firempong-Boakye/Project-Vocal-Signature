@@ -187,7 +187,7 @@ nav {
     border-radius: 50%;
     border: 8px solid var(--green);
     max-width: 320px;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 .images:hover{
@@ -214,4 +214,9 @@ nav {
     font-weight: 600;
     font-size: 1.3em;
     padding: 0 5px;
+ }
+
+ .emphasize{
+    color: #ffe100;
+    font-weight: 600;
  }

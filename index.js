@@ -16,3 +16,11 @@ hamburger.addEventListener("click", showHamburger)
 document.querySelectorAll(".navLink.a").forEach((item) => {
     addEventListener("click", hideHamburger)
 })
+
+document.querySelector(".img-container").addEventListener("click", (e) => {
+    console.log(e);
+})
+
+window.addEventListener("keydown", (e) => {
+    console.log(e.keyCode);
+})
