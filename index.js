@@ -11,11 +11,19 @@ function hideHamburger () {
     navLink.classList.remove("active"); 
 }
 
-hamburger.addEventListener("click", showHamburger)
-
+hamburger.addEventListener("click", showHamburger);
+navLink.addEventListener("click", hideHamburger);
+window.addEventListener("scroll",hideHamburger);
+/*
 document.querySelectorAll(".navLink.a").forEach((item) => {
-    addEventListener("click", hideHamburger)
-})
+    addEventListener("click", () => console.log("hello"));
+})*/
+
+/*window.addEventListener("click", hideHamburger);*/
+/*
+window.querySelectorAll(".navLink.a").forEach((item) => {
+    addEventListener("touchstart", hideHamburger)
+})*/
 
 
 //Function to match audio with key
@@ -56,7 +64,7 @@ let divKeys = document.querySelectorAll("div[data-key]");
 let audioKeys = document.querySelectorAll("audio[data-key]");
 
 divKeys.forEach ((item) => {
-    item.addEventListener("click" , clickPlay);
+    item.addEventListener("click", clickPlay);
     item.addEventListener("touchend", clickPlay);
 })
 

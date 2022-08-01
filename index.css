@@ -115,7 +115,7 @@ nav {
     .navLink.active {
         top: 82px;
         left: 0;
-        opacity: 0.98;
+        opacity: 1;
     }
 
 
