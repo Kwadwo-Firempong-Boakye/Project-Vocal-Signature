@@ -30,10 +30,12 @@ function audioMatch (e) {
 
     const key = document.querySelector(`.img-container[data-key="${e.keyCode}"]`)
     const keyImage = key.children[0];
+    keyImage.classList.remove("playing");
     keyImage.classList.add("playing");
 }
 
-//Function to remove transition
+//Function to remove transition 
+
 function removeTransition (e) {
     if (e.propertyName !== "border-top-width") {
         return;
@@ -49,13 +51,13 @@ everyKey.forEach((item) => item.addEventListener("transitionend", removeTransiti
 window.addEventListener("keydown", audioMatch)
 
 
-//select image
+//Functions for touch and clicks
 let divKeys = document.querySelectorAll("div[data-key]");
 let audioKeys = document.querySelectorAll("audio[data-key]");
 
 divKeys.forEach ((item) => {
     item.addEventListener("click" , clickPlay);
-    item.addEventListener("touchstart", clickPlay);
+    item.addEventListener("touchend", clickPlay);
 })
 
 function clickPlay () {
