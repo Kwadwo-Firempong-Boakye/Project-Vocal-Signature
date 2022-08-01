@@ -49,4 +49,21 @@ everyKey.forEach((item) => item.addEventListener("transitionend", removeTransiti
 window.addEventListener("keydown", audioMatch)
 
 
+//select image
+let divKeys = document.querySelectorAll("div[data-key]");
+let audioKeys = document.querySelectorAll("audio[data-key]");
 
+divKeys.forEach ((item) => {
+    item.addEventListener("click" , clickPlay);
+    
+})
+
+function clickPlay () {
+    audioKeys.forEach ((item) => {
+        if (this.dataset.key == item.dataset.key) {
+            item.currentTime = 0 ;
+            item.play();
+            this.children[0].classList.add("playing");
+        }
+    })
+}
