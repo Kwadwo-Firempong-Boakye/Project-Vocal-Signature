@@ -120,7 +120,7 @@ nav {
 
 
     .images{
-        width: 250px;
+        width: 200px;
     }
 
     .button,
@@ -172,7 +172,7 @@ nav {
     gap: 5rem;
     flex-wrap: wrap;
     margin: 1rem 0;
-    padding: 3rem 4rem;
+    padding: 3rem 3rem;
 }
 
 .img-container{
@@ -186,7 +186,7 @@ nav {
 .images{
     border-radius: 50%;
     border: 5px solid var(--green);
-    max-width: 320px;
+    max-width: 300px;
     transition: all 0.3s;
 }
 /*s
