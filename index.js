@@ -1,29 +1,27 @@
+//Select hamburger icon and nav element
 const hamburger = document.querySelector(".hamburger");
 const navLink = document.querySelector(".navLink");
 
+//listen for a press on the keyboard anywhere.
+window.addEventListener("keydown", audioMatch)
+
+//function to show the hamburger menu
 function showHamburger () {
     hamburger.classList.toggle("active");
     navLink.classList.toggle("active"); 
 }
 
+//function to hide the hamburger menu
 function hideHamburger () {
     hamburger.classList.remove("active");
     navLink.classList.remove("active"); 
 }
 
+
+//Event listeners for showing and hiding the hamburger menu
 hamburger.addEventListener("click", showHamburger);
 navLink.addEventListener("click", hideHamburger);
 window.addEventListener("scroll",hideHamburger);
-/*
-document.querySelectorAll(".navLink.a").forEach((item) => {
-    addEventListener("click", () => console.log("hello"));
-})*/
-
-/*window.addEventListener("click", hideHamburger);*/
-/*
-window.querySelectorAll(".navLink.a").forEach((item) => {
-    addEventListener("touchstart", hideHamburger)
-})*/
 
 
 //Function to match audio with key
@@ -52,22 +50,24 @@ function removeTransition (e) {
     }
 }
 
-
+//Select all images and for each one, listen for transition end to remove click effect
 const everyKey = document.querySelectorAll(".images");
 everyKey.forEach((item) => item.addEventListener("transitionend", removeTransition));
 
-window.addEventListener("keydown", audioMatch)
 
 
-//Functions for touch and clicks
+
+//Select all div and audio elements with data-key attribute
 let divKeys = document.querySelectorAll("div[data-key]");
 let audioKeys = document.querySelectorAll("audio[data-key]");
 
+//For each div, listen for touches and clicks
 divKeys.forEach ((item) => {
     item.addEventListener("click", clickPlay);
     item.addEventListener("touchend", clickPlay);
 })
 
+//Function to match audio data-key with div data key and play correct sound
 function clickPlay () {
     audioKeys.forEach ((item) => {
         if (this.dataset.key == item.dataset.key) {
