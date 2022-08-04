@@ -36,7 +36,7 @@ function audioMatch (e) {
 
     const key = document.querySelector(`.img-container[data-key="${e.keyCode}"]`)
     const keyImage = key.children[0];
-    keyImage.classList.remove("playing");
+    //keyImage.classList.remove("playing");
     keyImage.classList.add("playing");
 }
 
@@ -63,17 +63,39 @@ let audioKeys = document.querySelectorAll("audio[data-key]");
 
 //For each div, listen for touches and clicks
 divKeys.forEach ((item) => {
-    item.addEventListener("click", clickPlay);
-    item.addEventListener("touchend", clickPlay);
+    item.addEventListener("click", debounce(clickPlay));
+    item.addEventListener("touchend", debounce(clickPlay));
 })
 
 //Function to match audio data-key with div data key and play correct sound
-function clickPlay () {
+function clickPlay (e) {
+    let specificDiv = e.target.parentNode;
     audioKeys.forEach ((item) => {
-        if (this.dataset.key == item.dataset.key) {
+        if (specificDiv.dataset.key == item.dataset.key) {
+            specificDiv.children[0].classList.add("playing");
             item.currentTime = 0 ;
             item.play();
-            this.children[0].classList.add("playing");
         }
     })
 }
+
+
+//Debounce Function practice
+
+function debounce (func, delay = 250) {
+    
+    let debounceInterval;
+    
+    return (...args) => {
+        if (debounceInterval) {
+            clearTimeout(debounceInterval);
+        }
+
+        debounceInterval = setTimeout(() => {
+            func(...args);
+        }, delay)
+    }
+    
+}
+
+
